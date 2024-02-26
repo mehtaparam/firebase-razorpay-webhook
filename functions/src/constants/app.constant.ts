@@ -1,0 +1,25 @@
+export const enum HttpMethodType {
+    GET = 'GET',
+    POST = 'POST',
+    PUT = 'PUT',
+    DELETE = 'DELETE',
+    DELETE_MULTI = 'DELETE_MULTI'
+}
+
+export const enum HTTP_REPONSE_STATUS {
+    SUCCESS = 200,
+    CREATED = 201,
+    BAD_REQUEST = 400,
+    NOT_FOUND = 404,
+    UNAUTHORISED = 401,
+    NOT_ALLOWED = 405,
+    FORBIDDEN = 403,
+    ALREADY_EXISTS = 409,
+    UNSUPPORTED_MEDIA_TYPE = 415
+}
+
+export const enum HTTP_REPONSE_STATUS_MESSAGE {
+    UNAUTHORISED = "UNAUTHORISED",
+    NOT_FOUND = "NOT_FOUND",
+    BAD_REQUEST = "BAD_REQUEST",
+}
