@@ -6,7 +6,7 @@ webhooks like payment , order , refund, etc.
 
 ## Support
 
-For support, email param@codingmantra.com.
+For support, email param@codingmantra.com and mobile number +91-9033596484.
 
 
 ## 🚀 About Me
@@ -18,6 +18,9 @@ I'm a full stack developer who loves pizza and code. I am fulltime freelancer an
 To run this project, you will need to add the following environment variables to your .env file
 
 `RAZOR_WEBHOOK_SECRET_KEY` = Your Razorpay Webhook Secret Key
+`CODINGMANTRA_AI_API_URL` = https://codingmantra.ai/api/create-message
+`CODINGMANTRA_AI_APP_KEY` = Your CodingMantra AI App Key
+`CODINGMANTRA_AI_AUTH_KEY` = Your CodingMantra AI Auth Key
 
 
 ## Features
@@ -29,6 +32,7 @@ To run this project, you will need to add the following environment variables to
 - Node Router Support
 - Node Middleware for Secret Key Validations
 - Node CORS > Cross Origin Handling
+- Support of CodingMantra AI for sending Whatsapp messages
 
 
 ## API Reference

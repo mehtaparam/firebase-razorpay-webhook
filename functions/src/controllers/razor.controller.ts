@@ -1,5 +1,6 @@
 import * as admin from 'firebase-admin';
 import { logInfo } from '../helpers/firebase-logger.helper';
+import { sendPaymentConfirmationWAMessage, sendPaymentFailedWAMessage } from './razor-wa-message.controller';
 
 export const createRazorWebhook = async (reqBody: any): Promise<any> => {
     const contactPayload = reqBody.payload.payment?.entity || reqBody.payload.subscription?.entity || null;
@@ -38,6 +39,11 @@ export const storeRazorPayment = async (paymentDetails: any): Promise<any> => {
     paymentDetails.updatedAt = new Date();
 
     // You can also perform tasks like sending email / whatsapp
+    if (paymentDetails.event === 'order.paid') {
+        await sendPaymentConfirmationWAMessage(paymentDetails);
+    } else if (paymentDetails.event === 'payment.failed'){
+        await sendPaymentFailedWAMessage(paymentDetails);
+    }
 
     return await razorOrderDocRef.set(paymentDetails, { merge: true });
 }
